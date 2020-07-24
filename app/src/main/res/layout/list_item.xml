@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="listFragment" type="com.michae1.codechallenge.fragment.listfragment.ListFragment"/>
+        <variable name="photo" type="com.michae1.codechallenge.data.model.Photo"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{photo.img_src}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/placeholder" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{`Earth date: ` + photo.earth_date}"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image"
+            app:layout_constraintWidth_percent="0.5"
+            tools:text="2020-01-01" />
+
+        <TextView
+            android:id="@+id/sol"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{`Sol: ` + photo.sol}"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/date"
+            app:layout_constraintWidth_percent="0.5"
+            tools:text="10004" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{`Camera: ` + photo.camera.full_name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sol"
+            tools:text="Front Hazard Avoidance Camera" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
