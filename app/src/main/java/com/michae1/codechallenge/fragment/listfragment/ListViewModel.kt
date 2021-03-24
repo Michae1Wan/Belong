@@ -1,12 +1,14 @@
 package com.michae1.codechallenge.fragment.listfragment
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.michae1.codechallenge.data.datasource.RemoteDataSource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import javax.inject.Inject
 
-class ListViewModel @ViewModelInject constructor(
+@HiltViewModel
+class ListViewModel @Inject constructor(
     private val datasource: RemoteDataSource
 
 ): ViewModel() {

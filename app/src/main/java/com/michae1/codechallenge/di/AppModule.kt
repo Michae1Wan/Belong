@@ -5,7 +5,7 @@ import com.michae1.codechallenge.network.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -18,7 +18,7 @@ const val API_KEY = "fvvS00Y3AMr7J3mAjo6xJV88ZTmus4WuoVCeW8vn"
  * Created by Michae1 (michae1wan@live.com) on 7/23/2020.
  */
 @Module
-@InstallIn(ApplicationComponent::class)
+@InstallIn(SingletonComponent::class)
 object AppModule {
     @Singleton
     @Provides
